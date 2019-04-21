@@ -1,0 +1,24 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class registerOnCourse extends Model
+{
+    protected $table = 'registeroncourse';
+    public function openCourse(){
+        return $this->belongsTo(openCourse::class,'course_Id');
+    } 
+
+    public function user(){
+        return $this->belongsTo(users::class,'user_Id');
+    }
+    public function attendance(){
+        return $this->hasMany(attendance::class);
+    }
+
+    public function certificate(){
+        return $this->hasMany(certificate::class);
+     }
+}
