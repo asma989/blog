@@ -39,4 +39,16 @@ class User extends Authenticatable
     public function registerOnCourse(){
         return $this->hasMany(registerOnCourse::class);
     }
+
+    public function courseEvaluation(){
+        return $this->hasMany(courseEvaluation::class);
+     }
+
+     public function employers(){
+        return $this->belongsToMany(employer::class);
+    }
+
+    public function trainerEvaluation(){
+        return $this->hasMany(trainerEvaluation::class);
+    }
 }

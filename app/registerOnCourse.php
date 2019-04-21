@@ -21,4 +21,15 @@ class registerOnCourse extends Model
     public function certificate(){
         return $this->hasMany(certificate::class);
      }
+      public function notForTrainer(){
+        return $this->hasMany(noteForTrainer::class);
+     }
+     public function courseEvaluation(){
+        return $this->hasMany(courseEvaluation::class);
+     }
+
+     public function studentAsssessment(){
+        return $this->hasMany(studentAssessment::class);
+     }
+
 }
