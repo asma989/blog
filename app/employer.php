@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class employer extends Model
 {
-   protected $table = 'employer';
+   protected $table = 'employers';
    public function department(){
        return $this->belongsTo(department::class,'department_Id');
    }
@@ -20,6 +20,6 @@ class employer extends Model
    }
 
    public function users(){
-    return $this->belongsToMany(User::class);
+    return $this->belongsTo(User::class);
 }
 }

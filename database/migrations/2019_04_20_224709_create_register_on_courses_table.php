@@ -15,9 +15,9 @@ class CreateRegisterOnCoursesTable extends Migration
     {
         Schema::create('registeroncourse', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer("user_Id",11);
-            $table->integer("course_Id",11);
-            $table->integer("AcceptanceTestMark",11);
+            $table->integer("user_Id");
+            $table->integer("course_Id");
+            $table->integer("AcceptanceTestMark")->length(3);
             $table->string("status",10);
 
             $table->foreign('user_Id')->references('id')->on('users');

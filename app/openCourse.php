@@ -27,4 +27,13 @@ class openCourse extends Model
    public function studentAsssessment(){
       return $this->hasMany(studentAssessment::class);
    }
+
+   public function checkIfExist($course)
+   {
+      return $this::where("course_Id","=", $course->course_Id)
+                  ->where("teacher_Id","=", $course->teacher_Id)
+                  ->where("startDate","=",  $course->startDate)
+                  ->where("endDate","=",  $course->endDate)
+                  ->first();
+   }
 }

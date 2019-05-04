@@ -13,5 +13,14 @@ class course extends Model
     public function acceptanceQuestions(){
         return $this->hasMany(acceptance_test_Questions::class);
     }
+
+public function add_course($course){
+    $this->Name = $course;
+    $this->save();
+}
+
+public function checkIfExist($courseName){
+  return $this::where("Name","like","%".$courseName."%")->first();
+}
     
 }

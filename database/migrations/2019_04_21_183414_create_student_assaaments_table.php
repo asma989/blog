@@ -15,13 +15,13 @@ class CreateStudentAssaamentsTable extends Migration
     {
         Schema::create('studentassess', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('totalMark',2);
+            $table->integer('totalMark')->length(10);
             $table->dateTime('assaamentDate');
 
-            $table->integer("registerStudent_Id",11);
+            $table->integer("registerStudent_Id");
             $table->foreign('registerStudent_Id')->references('id')->on('registerOnCourse');
 
-            $table->integer("openCourse_Id",11);
+            $table->integer("openCourse_Id");
             $table->foreign('openCourse_Id')->references('id')->on('opencourse');
             $table->timestamps();
         });

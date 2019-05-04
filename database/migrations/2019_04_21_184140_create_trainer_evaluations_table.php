@@ -16,15 +16,15 @@ class CreateTrainerEvaluationsTable extends Migration
         Schema::create('trainerevaluation', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->integer('trainer_Id',11);
+            $table->integer('trainer_Id');
   
-            $table->integer('timing',1);
-            $table->integer('coursePoints',1);
-            $table->integer('practical_theory',1);
-            $table->integer('explain',1);
-            $table->integer('tools',1);
-            $table->integer('discussion',1);
-            $table->integer('extraSubject',1);
+            $table->integer('timing')->length(1);
+            $table->integer('coursePoints')->length(1);
+            $table->integer('practical_theory')->length(1);
+            $table->integer('explain')->length(1);
+            $table->integer('tools')->length(1);
+            $table->integer('discussion')->length(1);
+            $table->integer('extraSubject')->length(1);
             $table->string("trainerNote",200);
             $table->string("extraNote",200);
 

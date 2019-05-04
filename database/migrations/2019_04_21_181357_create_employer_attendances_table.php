@@ -15,8 +15,8 @@ class CreateEmployerAttendancesTable extends Migration
     {
         Schema::create('employerattendance', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('employer_Id',11);
-            $table->integer('attendance',1);
+            $table->integer('employer_Id');
+            $table->integer('attendance')->length(10);
             $table->dateTime('dateOfAttendance');
             $table->foreign('employer_Id')->references('id')->on('employers');
             $table->timestamps();

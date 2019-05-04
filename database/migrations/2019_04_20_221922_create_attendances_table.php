@@ -15,10 +15,10 @@ class CreateAttendancesTable extends Migration
     {
         Schema::create('attendance', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer("student_Id",11);
-            $table->integer("attendance",1); 
+            $table->integer("student_Id");
+            $table->integer("attendance")->length(1); 
             $table->date('attendanceDate');
-            $table->integer("Behaivior",2); 
+            $table->integer("Behaivior")->length(2); 
             $table->foreign('student_Id')->references('id')->on('registerOnCourse');
             $table->timestamps();
         });

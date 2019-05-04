@@ -41,7 +41,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<ul class="res">
 								<li><a href="contact.html">اتصل بنا</a></li>
 								<li><a href="gallery.html">البوم الصور</a></li>	
-								<li><a href="login.html"> تسجيل الدخول</a></li>
+								<li><a href="{{ route('login') }}"> تسجيل الدخول</a></li>
 								<li><a href="about.html">حول نور</a></li>	
 								<li><a href="index.html" class="active">الرئيسية</a></li>						
 							</ul>

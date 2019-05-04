@@ -15,8 +15,8 @@ class CreateEmployerVecationsTable extends Migration
     {
         Schema::create('employervecation', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer("employer_Id",11);
-            $table->integer("empolyerUser_Id",11);
+            $table->integer("employer_Id");
+            $table->integer("empolyerUser_Id");
             $table->dateTime('vacationDate');
             $table->foreign('employer_Id')->references('id')->on('employer');
             $table->foreign('empolyerUser_Id')->references('id')->on('employeruser');

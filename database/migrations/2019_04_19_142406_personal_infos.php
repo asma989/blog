@@ -17,13 +17,13 @@ class PersonalInfos extends Migration
         $table->increments('id');
         $table->string('fullName', 30);
         $table->date('BirthDate');
-        $table->integer('gender',1);
+        $table->integer('gender')->length(1);
         $table->string('nationality', 10);
-        $table->integer('phoneNumber',10);
+        $table->integer('phoneNumber')->length(10);
         $table->string('currentAddress', 30);
-        $table->tinyInteger('studyCont', 1);
+        $table->tinyInteger('studyCont')->length(1);
         $table->string('acadamicQualification', 20);
-        $table->integer('userId',11);
+        $table->integer('userId');
         $table->foreign('userId')->references('id')->on('users');
         });
     }

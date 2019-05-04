@@ -16,12 +16,12 @@ class CreateCertificatesTable extends Migration
         Schema::create('certificate', function (Blueprint $table) {
             $table->increments('id');
             $table->dateTime('certificateDate');
-            $table->integer("totalMark",3);
+            $table->integer("totalMark")->length(3);
 
-            $table->integer("register_Id",11);
+            $table->integer("register_Id");
             $table->foreign('register_Id')->references('id')->on('registerOnCourse');
 
-            $table->integer("openCourse_Id",11);
+            $table->integer("openCourse_Id");
             $table->foreign('openCourse_Id')->references('id')->on('registerOnCourse');
             $table->timestamps();
         });

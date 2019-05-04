@@ -16,10 +16,10 @@ class CreateNoteForTrainersTable extends Migration
         Schema::create('notefortrainer', function (Blueprint $table) {
             $table->increments('id');
             $table->string("note",500);
-            $table->integer("student_Id",11);
+            $table->integer("student_Id");
             $table->foreign('student_Id')->references('id')->on('registerOnCourse');
 
-            $table->integer("openCourse_Id",11);
+            $table->integer("openCourse_Id");
             $table->foreign('openCourse_Id')->references('id')->on('registerOnCourse');
             $table->timestamps();
         });
